@@ -9,13 +9,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      // login success logic (can stay empty for now)
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Login OK')),
       );
@@ -38,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 key: const Key('emailField'),
